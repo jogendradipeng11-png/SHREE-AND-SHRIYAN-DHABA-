@@ -78,7 +78,7 @@
         font-weight: bold;
     }
 
-    /* Notification */
+    /* Staff Order Notification */
     .notification-container {
         position: fixed;
         top: 10px;
@@ -173,7 +173,7 @@
     <!-- STAFF POS VIEW -->
     <div id="staffView">
         <div class="logo">
-            <img src="https://i.imgur.com/epOIKaj.png" alt="Shree & Shriyan Dhaba Logo">
+            <img src="./logo_180x90.jpg" alt="Shree & Shriyan Dhaba Logo">
             <h2>Shree & Shriyan Dhaba</h2>
             <p style="text-align:center; color:#d84315; font-size:13.5px; line-height:1.4; margin:5px 0;">
                 At/Po - Durlaga, Dist - Jharsuguda, Pin - 768204 (Odisha)<br>
@@ -216,7 +216,7 @@
     <!-- CUSTOMER VIEW -->
     <div id="customerView" style="display:none;">
         <div class="logo">
-            <img src="https://i.imgur.com/epOIKaj.png" alt="Logo" style="width:130px;">
+            <img src="./logo_180x90.jpg" alt="Logo" style="width:130px;">
             <h2>Shree & Shriyan Dhaba</h2>
             <p style="text-align:center;color:#2e7d32;font-weight:bold;">TABLE ORDERING</p>
         </div>
@@ -236,21 +236,8 @@
                 <tbody id="customerBill"></tbody>
             </table>
             <div class="total">Your Total: ₹ <span id="custTotal">0</span></div>
-
-            <!-- WhatsApp & Payment Section -->
-            <h3>Complete Your Order</h3>
-            <input id="custWhatsApp" type="tel" placeholder="WhatsApp Number (with country code e.g. 917077088311)">
             <button onclick="placeCustomerOrder()" style="background:#d84315;">✅ Place Order for Kitchen</button>
             <button onclick="clearCustomerOrder()" style="background:#666;">🗑️ Clear Cart</button>
-
-            <!-- PhonePe QR Code -->
-            <div id="paymentSection" style="display:none; text-align:center; margin:20px 0; padding:15px; border:2px dashed #d84315; border-radius:12px;">
-                <p><strong>Scan to Pay via PhonePe</strong></p>
-                <!-- REPLACE THIS WITH YOUR REAL PHONEPE QR IMAGE LINK -->
-                <img id="phonepeQR" src="https://i.imgur.com/YOUR_PHONEPE_QR_HERE.png" style="width:220px; border:3px solid #ff9800; border-radius:12px;" alt="PhonePe QR Code">
-                <p style="font-size:14px; color:#d84315; margin:12px 0;">After successful payment, click below</p>
-                <button onclick="confirmPayment()" style="background:#2e7d32; font-size:16px;">✅ I Have Paid - Confirm</button>
-            </div>
 
             <div id="customerAcceptedMsg">
                 ✅ Your order has been accepted by the kitchen!<br>
@@ -266,7 +253,7 @@
 <!-- Hidden Print Area -->
 <div id="printArea" style="display:none;">
     <div class="print-header">
-        <img src="https://i.imgur.com/epOIKaj.png" alt="Logo">
+        data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAIBAQEBAQIBAQECAgICAgQDAgICAgUEBAMEBgUGBgYFBgYGBwkIBgcJBwYGCAsICQoKCgoKBggLDAsKDAkKCgr/2wBDAQICAgICAgUDAwUKBwYHCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgr/wAARCABaALQDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6H0P4e/Dl9Dsmb4faESbOIknR4OfkH+zVr/hXfw4/6J7oX/gmg/8AiKm0OX/iR2PI/wCPKLr/ALgq15vuK+XdKVz/ADfnXxHO/fe/dmf/AMK7+HH/AET3Qv8AwTQf/EUf8K7+HH/RPdC/8E0H/wARWgsgJILdFJAB6n0oMijP7wYGM5GSM9enp/Wj2MiovFyV1N/ezP8A+Fd/Dj/onuhf+CaD/wCIo/4V38OP+ie6F/4JoP8A4irwnLojK4Xd13DG3g/4U5JA6qwmTBKgn0yCfXtin7GZVsa/tP7/APgmf/wrv4cf9E90L/wTQf8AxFH/AArv4cf9E90L/wAE0H/xFXxMpZF3r8wHJH3ckjn8qVJdzlCduMdR659+39aXsZCTxj+0/v8A+CZ//Cu/hx/0T3Qv/BNB/wDEUf8ACu/hx/0T3Qv/AATQf/EVoLMhALSqM47dOSPX8aBL7r16g0exkiZTxcFrN/f/AMEz/wDhXfw4/wCie6F/4JoP/iKP+Fd/Dj/onuhf+CaD/wCIrQ833FHm+4o9lIj2+J/nf3sz/wDhXfw4/wCie6F/4JoP/iKP+Fd/Dj/onuhf+CaD/wCIrQ833FHm+4o9lIPb4n+d/ezP/wCFd/Dj/onuhf8Agmg/+Io/4V38OP8Aonuhf+CaD/4itBZAWVWYAFgCfTmjzBxzg/NkE56Djp69KFRkaQli5q6m/vZn/wDCu/hx/wBE90L/AME0H/xFH/Cu/hx/0T3Qv/BNB/8AEVda5+RyvVM8FcZ4z3/zxTvNwr4lVim88dwvPr3p+xkVbG/zP7/+CUP+Fd/Dj/onuhf+CaD/AOIo/wCFd/Dj/onuhf8Agmg/+Iq+8yJnEithiMAdeM560plxIE3A5BO4dOmcdfw7UvYyJvjL25n9/wDwTP8A+Fd/Dj/onuhf+CaD/wCIo/4V38OP+ie6F/4JoP8A4itAyqDgyr1wP++c+v4fWgTA8qwIIBz9Rmj2MkEpYuCu5P7/APgmf/wrv4cf9E90L/wTQf8AxFFaHm+4oo9lIz9vif5397MzQ5f+JHY/N/y5xf8AoAq15v8AtfpWZocx/sSyx/z5xf8AoAq15zV63sDWpH336lnzf9r9KPN/2v0qt5zUec1HsCeUs+b/ALX6Vi/ED4gaF8N/Cs/irX3dooWWOG3hx5lxMxwkSbiACT3JCqAWYhVJGj5zV8+/t2+KdDEHh7wN4k1TVLLTr+w1ya/vNItEnkgZtNmtbbeGI2RvNcbGlALRrvcDK5FRw053Ud7PfbY+k4QySnxBxLhsvqtqFSS5rb8q1lbpflTs3ojhPiz/AMFN/C3gnUxpepeOSmou4Efh7wfpiXtxCT91JpbhNm85HygpIM4aJTxW7pn7c3jrwH8QLD4cfGbwTr3hzWNT0qDVLDQfHukx6fdXdnMpaOWOWMKkeQDw6tggh/LCsy/VP7Fv7B/7EXwR8Z6D+1/8H9G8F2vwi8TeCxb/ANr+KdVurnXtN1uUqjRm4kUpaFSJVeQSRSJL8owMZ0P+CkXwe+Dfx08DeNP2g/2l9X8LeJfhdp3hb7J8Gzpeo3MetnX9jRt5U5RcRmaMMWjkeN4xJJICqbgOnl0qypwU7/zN6821uT4b91vbZpn9jS8MeE3lbpTwNFR6JR97ltfm9tf2no7vXdNaHPeE/FukeNPDtr4o0KZ2truMsiyxlJI2DFXjdTyro6sjKejKR2rR83/a/SvDv2NPHWn69pni7wxo+oaneabpviVp9B1HWNNWzuNQsZkC/aWhUkJuuobvjrxkhSSB7R5zVP1eUUubey281c/jLifJlkPEOKy+LbjTnJRb3cb3i30u42emhZ83/a/Sjzf9r9KriV2OFUn6U2W5EK7pnVB6uwH86PYHhKF3ZFrzf9r9KPN/2v0rEvvHHhDS8/2l4t0u3x18/UYk/m1Qnx14N1K0iFj4601Req32SeDUYSZNp2sUySGweDwcGj2DOqOAxcoqXs3Z9bO3ft2uzofN/wBr9KPNHTP6V5r4s+FnxT15DN4V/aQ1zTw3KK2mWkqfmiIcfjXzZ4r8Z/tFfDz4s3vgPxL+0XJZ3ViiyQ319dyG1uAwVkBUIwUkN/EuBggnoauOG5up9pw7wHDibnhhcfS9pCLk4ctW6SaV/wCGr2bV+W9ux9u+aPX9KPNGMZr5k8IftSftEaJbiTxT8O9O8YWKD59S8LXkckm31IhLj80Wu/8ABv7ZvwR8UzjTtU1yfw/fZw9prtuYdp9N4yv5kUnhpI5cw8PuKMv5pQpKtCO8qLVRL1Ufej/29FHrnm/7X6UeaPX9Koafq1jq1mmoaVfQXVu4yk9tMsiMPZlyDU3nNU+wPjJU5Qk4yVmiz5v+1+lHm/7X6VW85qPOaj2AuUs+b/tfpRVbzmoo9gHKZujSbdIsYw6kGyj+YYwf3YPH8u1Wg65wZkHOOn+zn1/D61l6HL/xJLLkf8ecX/oAq15vuK9j2B6U3T537vXuWfOXPDAjAOfqM4o84e1VvN9xR5vuKPYGDjd6FkTZOABXkckJ+OWgfES48O+DL661K78R2GjeG9bvJo7fTYdNsEuYr5hJlpZGlmvbtBsiZf8ARo8t6dV8XvFepaF4XXR/Dd9Hb61r1yNO0eeQgLbyOrGS5bPG2CJZJjnj92B3FcJ441TwD4U+J3w2+FHg749aP4K0TR/CuqTatrd/qWLW104RwpHLK6JJvkd4ZdgUCSR1YK6Elx20suw1TBVamJi5Qta0d5d0tvTdep+y+D+W4ujmv9pUrKesKblsm/il8lZJ2e8tLo9Q+CH7VPhH4e/FrWLb9qfWfF3w01m50SzstPPwta6mstY+z5SXU7mJVY3Mrr5SiTyWEUY2uykV1HiDwt8ef2nfG+uax+yR4I8ReK9C8UeCrnw9d+N/jNfywwaYZVlja60uUtIVR0m/exRRneYIvlX5qwbH4xfsLfsb6D4f+KOs/AvxX8RRrepoLnxd4pazt7ZFKMYrmK1kmlyzSBY0N5iVWkUNMvIH0hov/BSnxXf/AA78Y6n4i/ZO8Z+HfEWjadI/hDTY7OXVLfXJWSQ24WW3hCxKMQ792AvmEAttJr4WtmGDxVX2uE5VTeiXOpL3Wk1e+6drx1afWx/YOFo1cPFYbHVL1bcz9xxdmr32tZ9Hpftc+PfFt/ofwM8c+CvCGvaVLa6vaeJte8F+I9ctr2G40vVLie7Oo2/kPlJz9mlle1ZnhVQ8rrnIAPowlBl8kOM4znbx1xj+teL+HZPhp8WtT8c/D7xT40ZZvCmlxaC1zqsbWdzHPcEXl3rBScKyST6gS4LAH/RI/wC8M938KvGl7408F29/rQiTVrSR7HXIojlUvYTslK/7DECRD3SRD3r6XLMFif7EoYirHl507Rs04xbbgpXbfNyW5lpZ3VtD+T/HPAYN8Tyx+HXMtKc5X0dSMdWraWesU+qin1POf26PEesab8P9E07SNemsZL3WMyPaTlHKqjjaSrDIyQT+FfJl9cX94jPeeIp7mTYWKyzs+cPtxksee/0r7E/ao8drofhZ9J0srFqsBtbuK5ltI5QLd7jyZAu8HBztzgDhhzXgx+KnjleIfGLxD/pkDF/6CBWrhyux9d4XY6vg+E6caWFi3zS95yabvZp6U5aWaW/Rnl8OgXFxCs0dvI7McHZDuCfNjkjn34HSvQvFfw68U6x8MPBFrpnhvUrloLXUiyW+mu7DN7xwOmQcj1ArqPhf488aa38Q7e61v4jauuj6FZzavrZh1OYq0EIyIyC2DufauO4Jr6BtPFmu/F7wNomteFU1TQoNY1BJJpGZUuFsk3MxBGQpk2qoPUB801C52cW8d5llGMwzlhocsJczk6j5YuUKkVF+4m3y80rK+lv5kfLXhH4O/tO6Pf283hHQfFFqguMO0Ur2yhVYc4LgEEGul/aOi1C7/an1iPTvCek607aTa7rHWJhHGV8mPJVjJGd/phs4J4r6C1Lx/wDBf4das2jeJPiFaW+oRAM8Wq6vJNKuRwSHZtufwr5f/aE8Z/DDxL8f9T8R3kMniDR5rC3SF9I1EQ/vBEgyHKMCBhgRj8eKJQUUeVwzxBnHFvEjxVXBezhGhUUZRpyjz806TXvOcVL4bxtOPXUjfwdBBINQvv2dvFekSLyL7wrqskir7gSJJ+jiprnxdZsg0/VvinqRjUYFj8Q/B4ulX281TI6/UAVzdtrnwItmEmn6P4305x/Ha63bNj/yEtbVr8UPCNqnl2Hxc+JVsn/PO4W3uUH4GYD9KmyPsq+Dxk7OpSm2v5k5W9HP6018rGt4Wlj028+3eBrrTbW4JyZ/Afjj7IzfW0vfvf7oxXpug/tA/FvwmijxPMb63HfxP4emsJCPa6thLA31YCvHpfHngS/GNQ+IYvM9tY+G1nIT9WSTd+Oas6T4y+HelyeZpPizRbRz1ey0/V9Ob/yBMy/+O0+WLPns2yCnmkf9rw0qv/cKrKf/AIMnGLiv8CifUngX47+HfGpgtv7JureedcLJbTRXtvvyQF823ZtucDlwvWu2eVUkCGRTnPzKuR0z/wDWr5i+Eev6P4q8fabc6Zq8GqyW17C0s8ZluWhBPBLzafvXODyZV6da+lPN9xVRpKR+DcY5LhcjzGNKnScOZX5W3pr567d7l+0t1uVdpbyKMq5UAkc8DnrRVDzfcUU/YHyiqU0vgRmaLN/xJbL/AK84v/QBVrzj71maLKf7Fsv+vSLv/sCrXmn3/OvXVA0nD32WfOPvR5x96ro5ckbgAFLEknoKXEhPyjIIBBB4OenX6H8qPYoFQm1dIyLzw5Zn4t+Hfidrfhj/AISXTdG0++s7zwu+uzaatyLgwkTLPCN25fJ27CVVw5yRjB4fwHpfxHufjJB8HvAnwk1zRV8a+O7nXtL0/R9N07UoLTUIIrzym33U6Ge3GneWrrNKPKniaREZ5Aw9MMkjqvl5y4+Qgj0P+FVfhld/Fj4VfEy2+LPhX4nCTWLXSbjTbQ3vh60ljgiuXikkZV4w7CBF3Z+7kfxGuPHZesXh503qmmuVv3Xvo07q2uump+t+HniDj+GK9DC4lxjhotttU26qu+b3ZRs7325m0r3Wx0mm/wDBL39qT4j6d480PXPBXgfS7LxjIss1/wCL7Oza780wrDut4bCJ1t9uwSBmct5rFuTknzvwP8Lv2i9X+Kx/Z78B3Np4yS2+1ovibw9rFwEkS02pcSCGW4toGgSZ1t/P+USTB1RWClq9a+IP7Tv7WXxG8HX/AID1D46/2fbavb+RcXOieHLa3uvKY4ZY5QSY9wyhZcMAx2lTgjnPgj8QfjJ8An1ST4afEHTYZdVNvHcTzeFbRzFbwp5dtZxYIEVvGN5SJRjdJIxyzkn5ijw7jMLJQo0aSg9XdX2ioxsmmk9rvZKNrapx/dK3jPwLiNZ1q7ktE+WSeru7tWv6d3e+ln4zo2ga3pPx1tfBvjH9nFtQ034dePL9vEGj6ha29jNql3NAiXNzNdwysVbyxbmCOKV4yvlyFV53eheGPCtro3jvxb410rRDodh4lv7aez8NJrU+oppwht1hP+kTgO7PtBI6KFVQSFqx47HxO+I/xL1P4ta78TBFqutW1pFqYs9AtYoZzAGjjlKHOJNhEZbPKxxj+EVf81hwc5HB5r6zD4SdOC5pO7Wqu+VbbLRb7O1/M/AOP+O8XxDOpg8PyfVXJOL9m1UaWq5pSu79+VpO2x49+2d4sttG0DRtInvp7Z726aSOVdnlZhZHAfKkk52lR93Ocg8Y8hPx98W/eX4hE554tLT/AON19d3NvZ3qhL2yimAOQJow4H5iuA8Rfst/A/xPrE2uah4PMU9w5eYWd5JCjMep2KcAn2AoqYWq5XizXhLjDhjLMqhgczwkpcnM+ZKE7uTv8MkuXSy0k722PnCz+LUcPi2fxJ4q8V6vLFexpBdtoNzDb3TxIjbVJVQmzewJGMnHtWBqfxo+Jt29xZ2fxL8Q/YXdlhhm1aTcIs/KrbSBnGAccV9k+Hvgz8KPDGkpoul/D/SzChJzdWizuxPUl5AWP50a98GPhP4k0qTRtS+HulCGQgk21mkLqR0IeMBgfxrN4Ks1ufT0PFLhOji+Z5fJx0im+TSMdE1C1k7dFLolfQ+JND0fVNfe/wBduZJDDZ2stxd31x8ybwpKq7N1LttUDqd3tV7XPhj4wi1yWz0Pwbq1xEUikjEOnyyBfMjV9mQvO3dt/Cvq/Rf2T/gVpGqQahbeD3mkilVo47y+lkj3Z4JUnDYPrmvSVeQqPKbcvI+XIxgZP6URwEre8ztzLxoo08Sp5bh5ThZpqdoW2tblc79eySaSW7f52afpkl1rMekXUsVq/n7JjeSiFYsH5txbG3HPHXjpmrWmWWjz+KJLWPVhHZxSymKZjiSRFzsCrjLO3y4XHJPpmvu7U/AHgHVLyXVtW8DaRc3BbMtxPp0TuxxnJJUk9uavDw/ocVx9u/4R2yWaMkiUWkYcbe4OM8Y7UlgJLqFbxshOHu4Kd3G3xpWfde47+Wit2d9Pk6//AGOvjJq2oC+0bw/ZW9tcQQy7bi/SPy3aJWkXbyQA5YYx2rDX9mj4x6dqd5p+p/DbVLgwxSLbyWUavFLJjCsH3AbQTuzyTjGOa+2ZGeIEuMYbB+YcHrRvYP5Z4bBJXcMjjPPpxWjwEO58vQ8ZeLKa5J0aclZJaTT9W+bd9fwsfM/7PfwW+MPgz4nadra+G9S0ixEcQ1CW4uESOVQP3oeNXJbPKquDyd3GK+oPOPvVcGQnAU+3zDnjP8uaQyMpwfQHr2IzWtPDKCsj4LiniHMOKsdHF4qnGMlFR91PVLu222/nbsiz5x96Kreaff8AOitPYHzHs2ZejS/8Saz+b/l0i7f7Aqz5v+1+lZujTj+xrPn/AJdIv/QBVnzx/er11R0OycFzs+Jv2/f2t/2jPhJ8fJ/AvgD4jRabpEOjw3EFvoscb3UJZQXkuN6k9mKrkLt2k96ktP2ufjhqH7RXwi8O6H8RtY1vRvEvhiyutUsY7Gzsn1eYm4DNskOIcmMA5cA7Cy8MM/WXjXwD8P8AxdMmp+KfAWi6rcxJtjuNR0uGZ1XrtDOpOPbpXEeC9Nh8S+N73WPF/wALtHhu9JuXg0a8k8OBZkgildYmSdweNgBATGN3GBR7NLoff4TO8o/sqFP6nHmpwcZP3felJWUtua99b3VvWzXyVp/7Zn7Tr/s9/EHxi3xi1JNR0LxlptnpdzttCIYZDdB4sCP5shF+bGPl4PXPT/Cj9s743eLrPxVNH8ct+nweAr250uxvIYJdUi1G1sld7nMUe2CAS+Zt80/MGVQCeR9DeM/BfhzRNSstA8M/Abw1daXf3CSa2R4aiZIArgJNtCgSsA7gLjcoYvnAKtp+KfA/h7wv4U1SbwB8IvD5vL6GK2uLWHQ4Qt3EZEUpIFC70VSW2k4+X2odNdj0KufZLUptLBxTqP3fg91e6rP3dNYt+je17nzJ+zL+1Z8c/E/i/wCHF38Sf2jpLHT9e1GeG+i1Sytpo9QKXBSOCNYsSQl87A5CgMCQSOBzln+1/wDtNXOo+Mbm7/aNvtKtdE8ZQ2EOp3VtZywWls01wp3xbVeXCxg/KG4Vs4JBr7A8BfDTw5oVnb6vefCnwtp2rQSu0U2l6NChiG4hGUhSVYrjOCQDnBIrmPAfgbTNU8UX6eK/2fvC1nbAyy21yPDUCtKwuJFQ5+bcSihzuCnLqQCCcHIuwLPcmdetVWEhZJK1qfScn7q5dbxdr66La2h6j4p+Lvhf4d/Bib4weIdeW/0yw0OO9kvbVNi3oKqUZFJ+USMy7Qem8Z6V8tfs6/tj+PJ/2up/hj8SfjXZ+I/D/iewYaHd6a0f2SwvnUSiCOXYDJsO+DcSQWCnvivfPFGveKLzxjbeBbnwtb3Phy8sFF61xpT3EUhLsphbHyKu0KfmGPmqHxz4D8I6L4dt9R8L/CDwzNd6YY10+N/DiS/Z4/M3MIljTcpySRjA3HJI5NJU0lsfO5dLLsLhqlHEUueVZNRd4+5/K1eOjT3tZNOzWh80eAv2r/2lfCuvaN4C+L/jzUriLx5qWkXfg3xJBHbgC2N8kVzbMfL2/NGzhuNysi44bNc/c/tj/tG21j8Sr2z+OepPq+geMbXTvCGlLaWsou1kurhHiMXklpcRxAgjkY96+y4fCnhXVPBem2t18MtIWOwgFxp2mXejxbLGYjd8sYDCNt3XZk57k1T+DHhfw95f/CVX3wl0PR9aW5dZLy08Ox2ryE4JdCw8zBJIy20kg8er5PI9r+3sljGpWeBhe6ukoW0krWTi7KUY2lbq21ubd/4v+JOmfs4S+NdZTS9M8W2/g83l2uoZSztb4W+9vMxkqivnI7YxXxV+zJ+21+0L44+Ky6J4/wDi7qbxXmi6i9rZwaTbSQ31xHbSyL5bgKLcKVDBsMvGG4Oa++dVnL2jxNEsiupV0dchgRyCD1FeR/DrRLSy8YX0EPwc0LT4JhfQXNxa+GVtSsQm2RoZCMTrNGSxCgAY564o9nbSx4+SY7L6GBxUa2GjOU/hfu+7o9FzJ6L/ACV72Pk1P23P2pz+yO/xCHxL1Yasnj0WX/CQ7bIRiD7Hv+zCPbvLbvn3bcDgbu1bvxv/AGzfj34I+Omo+DYvjHrFnZyeFLCTSYFksgkGo3FlbsHmkePaIvMd2fnGCce30t458H6PotrJ4e8J/s9eGtS05dNub8Wp0aBIvtqBVjG3ZtZmUsOBuIGAa3NX+Hvw1n0iXX9Y+DOg3l19gHnRjw/BJNKFjAEQyhJ4UKB7AUcifQ+hWf5HCoqrwMOWXPZLk+04WvppblfRb6W1v80az+1h8fhrfwR05PjhFdHxPqcll4putFs447XUNmopCSheIbhsYoZEARsEr6nqPib8Vv2lfhh+1n/wzJb/ABxu7+x8fW8P/CNaxeRwi40HzZzvYhYtszBYpUAIG4MpyDmvXvAWg2nirSLWX4k/BTQ7LU9EcRafG2jwPHbxcSR/Z2+bYFJwQp4dCcDIqlez6vq/x0iuda+Eul3kNrKqWniCfRN9zAqwCVZFuGGABKWTAIIJGO9L2a7HKszwX1iUYYaFoQqX+Bpty5oSTtry3Sst1ptoeIftdftj/EDwLrsUPwb+PDPH4O1dNI1zR52ikv8AWXjG65vJgItsUYbbBkBdxZiBgCug/aC/aq+NOifETR/jr8F/FNzqvw707w5o+s+JPDkLRHNtdS3EbNnYXUDygrHPytjPGceu/FXw5p9rpt3f+FPgloWtaxrc6LfG50aBlnVf3hadm27vuADc332U84rrfAPhTwNDoy3emfDbS9KF/pywXNqukRRN5DZY28iqoyoLNlDxkmmqa7HN/a+UYfCUZ/VVJxUou7j7yly8zdkmnpLkluru2mhnfsnfEHUvif8AAnSvH2p+KLzVX1O8vpYry82CUwi7mSJWCKoBWJUGMZr0fzf9rtjmsnQND8O+FNLTRPC2hWWmWUbM0dnp9qkMSknJIVAACTyau+eP71HsPI+Lx1SnicZUqU1yxlJtLTRN6LTTRaFnzf8Aa/Siq3nj+9RR7E5ORGbo0g/sez+Yf8ekf/oAqz5o/vCqOj/8gez/AOvSP/0AVYr1FTjY7JxXOyVnVhgkUwJAOQB+VNop+ziSkOKQnqB+VLiH0H5Uyij2cQsSfusYwPypvlwDnA/Km0UeziFiU2ceSq7WYBcqo5+bGP5ig26ltmwZxnHHrj19ahMsrKoaVjwOreg4oDuJfMDndt+9nnpmo5EdXsYOViVIN6giIYIGMkDOSQO/saVIvLUuEwAMnp0zt9fWoLaWX7XGPMb76jr/ALVNaSTcw3n7xHXtuJx+dJRQ3Qp8ty0xBRS2MP8AcHGW5xwM+tN+yqDny14zk5GOCAec+pFReY5i2lzjd0z+NNmllPWRjlecn6GnyIlUIJE8tukZ/eoByR26jqKTZCRjA/Kokd3J3uTyTye5606qVNNGNSCjKyHeXB6D8qTybbOdoz9KSin7OJFh3lwHqB+VOQogwpAqOij2cQtcm80f3hR5o/vCoaKPZxFyom80f3hRUNFHs4hyo//Z
         <div class="print-title">Shree & Shriyan Dhaba</div>
         <div class="print-subtitle">At/Po - Durlaga, Dist - Jharsuguda, Pin - 768204 (Odisha)</div>
         <div class="print-contact">
@@ -317,7 +304,6 @@ let bill = [];
 let currentTable = '';
 let customerOrder = [];
 let currentName = '';
-let custWhatsApp = '';
 let count = parseInt(localStorage.getItem("inv") || "1");
 let liveOrdersListener = null;
 let refreshInterval = null;
@@ -406,20 +392,24 @@ function renderBill() {
   document.getElementById("total").innerText = total.toFixed(2);
 }
 
+// ====================== AUTO CLEAR WITH PROPER INVOICE INCREMENT ======================
 function clearBill() {
   bill = [];
   renderBill();
   document.getElementById("customerName").value = "";
   currentTable = '';
+
+  // Properly increment invoice number
   count++;
   localStorage.setItem("inv", count);
   document.getElementById("invoice").value = "INV" + String(count).padStart(3, '0');
+
   showSuccess("✅ Bill Printed & Cleared Successfully");
 }
 
-// ====================== OPEN BILL IN NEW TAB ======================
+// ====================== OPEN BILL IN NEW TAB (with correct invoice) ======================
 function openBillInNewTab(order) {
-  const invoice = "INV" + String(count).padStart(3, '0');
+  const invoice = "INV" + String(count).padStart(3, '0');   // Use current count
   let subtotal = order.items.reduce((sum, item) => sum + item.qty * item.price, 0);
   const finalTotal = (subtotal * 1.05).toFixed(2);
 
@@ -444,7 +434,7 @@ function openBillInNewTab(order) {
         th, td { padding: 8px; border-bottom: 1px dotted #ccc; text-align: left; }
         .amount { text-align: right; }
         .total { font-size: 22px; font-weight: bold; color: #d84315; text-align: center; margin: 20px 0; }
-        button { background: #d84315; color: white; padding: 12px; border: none; width: 100%; font-size: 18px; cursor: pointer; margin: 10px 0; }
+        button { background: #d84315; color: white; padding: 12px; border: none; width: 100%; font-size: 18px; cursor: pointer; margin-top: 20px; }
         .footer { text-align: center; margin-top: 30px; font-size: 13px; color: #666; }
       </style>
     </head>
@@ -479,6 +469,7 @@ function openBillInNewTab(order) {
   newTab.document.write(billHtml);
   newTab.document.close();
 
+  // Increment invoice after opening bill
   count++;
   localStorage.setItem("inv", count);
   document.getElementById("invoice").value = "INV" + String(count).padStart(3, '0');
@@ -486,7 +477,7 @@ function openBillInNewTab(order) {
 
 // ====================== ACCEPT ORDER ======================
 function acceptOrder(orderId) {
-  if (!confirm("Accept this order?")) return;
+  if (!confirm("Accept this order? It will open a separate bill in a new tab.")) return;
 
   db.ref('tableOrders/' + orderId).once('value', (snapshot) => {
     const ord = snapshot.val();
@@ -494,15 +485,9 @@ function acceptOrder(orderId) {
 
     openBillInNewTab(ord);
 
-    // Auto send bill to WhatsApp if number provided
-    if (ord.whatsapp) {
-      const msg = `Shree & Shriyan Dhaba\nTable: ${ord.table}\nInvoice: INV${String(count).padStart(3,'0')}\nTotal: ₹${(ord.total*1.05).toFixed(2)}\nThank you for ordering!`;
-      window.open(`https://wa.me/${ord.whatsapp}?text=${encodeURIComponent(msg)}`, '_blank');
-    }
-
     db.ref('tableOrders/' + orderId).update({ status: "accepted" });
 
-    alert(`✅ Order from Table ${ord.table} accepted.\nBill sent to WhatsApp if number provided.`);
+    alert(`✅ Order from Table ${ord.table} accepted.\nBill opened in new tab for printing.`);
 
     notifyCustomerOrderAccepted(ord.table, ord.name);
   });
@@ -517,106 +502,7 @@ function notifyCustomerOrderAccepted(table, name) {
   });
 }
 
-// ====================== CUSTOMER FUNCTIONS ======================
-function placeCustomerOrder() {
-  if (customerOrder.length === 0) return alert("Cart is empty!");
-
-  custWhatsApp = document.getElementById("custWhatsApp").value.trim();
-  if (!custWhatsApp) return alert("Please enter your WhatsApp number");
-
-  const total = parseFloat(document.getElementById("custTotal").innerText);
-  const orderId = Date.now();
-  const orderData = {
-    id: orderId,
-    table: currentTable,
-    name: currentName,
-    whatsapp: custWhatsApp,
-    items: JSON.parse(JSON.stringify(customerOrder)),
-    total: total,
-    timestamp: new Date().toLocaleString(),
-    status: "pending",
-    paid: false
-  };
-
-  db.ref('tableOrders/' + orderId).set(orderData);
-  db.ref('newOrders/' + orderId).set(orderData);
-
-  alert(`✅ Order Placed Successfully for Table ${currentTable}`);
-
-  // Show PhonePe QR section
-  document.getElementById("paymentSection").style.display = "block";
-
-  customerOrder = [];
-  renderCustomerOrder();
-}
-
-function confirmPayment() {
-  if (!custWhatsApp) return alert("WhatsApp number is required");
-
-  db.ref('payments/' + currentTable).set({
-    table: currentTable,
-    whatsapp: custWhatsApp,
-    amount: document.getElementById("custTotal").innerText,
-    timestamp: new Date().toLocaleString(),
-    status: "paid"
-  }).then(() => {
-    alert("✅ Payment Confirmation Saved!\nThank you for dining with us.");
-    showSuccess("Payment Confirmed & Saved");
-  });
-}
-
-function joinTable() {
-  currentTable = document.getElementById("custTable").value.trim();
-  currentName = document.getElementById("custName").value.trim() || "Guest";
-  if (!currentTable) return alert("Please enter Table Number");
-  document.getElementById("signInSection").style.display = "none";
-  document.getElementById("menuSection").style.display = "block";
-  document.getElementById("displayTable").innerText = currentTable;
-  document.getElementById("displayName").innerText = currentName;
-  loadCustomerMenu();
-  renderCustomerOrder();
-  listenForAcceptedOrders();
-}
-
-function loadCustomerMenu() {
-  let html = '';
-  items.forEach((item, idx) => {
-    html += `<div class="menu-item">
-      <span><strong>${item.name}</strong> <small>₹${item.price}</small></span>
-      <button onclick="addCustomerItem(${idx})" style="background:#2e7d32;padding:8px 16px;border-radius:6px;">+ Add</button>
-    </div>`;
-  });
-  document.getElementById("menuItems").innerHTML = html;
-}
-
-function addCustomerItem(idx) {
-  let item = items[idx];
-  let existing = customerOrder.find(o => o.name === item.name);
-  if (existing) existing.qty += 1;
-  else customerOrder.push({...item, qty: 1});
-  renderCustomerOrder();
-}
-
-function renderCustomerOrder() {
-  let html = "", total = 0;
-  customerOrder.forEach((b, i) => {
-    let t = b.qty * b.price;
-    total += t;
-    html += `<tr><td>${b.name}</td><td>${b.qty}</td><td>₹${t}</td><td onclick="delCustomerItem(${i})" style="color:red;cursor:pointer;">❌</td></tr>`;
-  });
-  document.getElementById("customerBill").innerHTML = html;
-  document.getElementById("custTotal").innerText = total.toFixed(2);
-}
-
-function delCustomerItem(i) { customerOrder.splice(i,1); renderCustomerOrder(); }
-function clearCustomerOrder() { 
-  if(confirm("Clear cart?")) { 
-    customerOrder = []; 
-    renderCustomerOrder(); 
-  } 
-}
-
-// ====================== STAFF NOTIFICATION & LIVE ORDERS ======================
+// ====================== STAFF NOTIFICATION ======================
 function showOrderNotification(order) {
   const container = document.getElementById("notificationContainer");
   const notif = document.createElement("div");
@@ -633,9 +519,11 @@ function showOrderNotification(order) {
     </button>
   `;
   container.appendChild(notif);
+
   setTimeout(() => { if (notif.parentElement) notif.remove(); }, 15000);
 }
 
+// ====================== LISTENERS & OTHER FUNCTIONS ======================
 function listenForNewOrders() {
   db.ref('newOrders').on('child_added', (snapshot) => {
     const order = snapshot.val();
@@ -660,12 +548,36 @@ function listenForAcceptedOrders() {
   });
 }
 
+function placeCustomerOrder() {
+  if (customerOrder.length === 0) return alert("Cart is empty!");
+  const total = parseFloat(document.getElementById("custTotal").innerText);
+  const orderId = Date.now();
+  const orderData = {
+    id: orderId,
+    table: currentTable,
+    name: currentName,
+    items: JSON.parse(JSON.stringify(customerOrder)),
+    total: total,
+    timestamp: new Date().toLocaleString(),
+    status: "pending"
+  };
+
+  db.ref('tableOrders/' + orderId).set(orderData);
+  db.ref('newOrders/' + orderId).set(orderData);
+
+  alert(`✅ Order Placed Successfully for Table ${currentTable}`);
+  customerOrder = [];
+  renderCustomerOrder();
+}
+
 function showTableOrders() {
   document.getElementById("ordersPanel").style.display = "block";
   renderLiveOrders();
+
   if (liveOrdersListener) liveOrdersListener.off();
   liveOrdersListener = db.ref('tableOrders');
   liveOrdersListener.on('value', (snapshot) => renderLiveOrders(snapshot));
+
   if (refreshInterval) clearInterval(refreshInterval);
   refreshInterval = setInterval(() => renderLiveOrders(), 5000);
 }
@@ -678,8 +590,10 @@ function renderLiveOrders(snapshot) {
 function processOrders(data) {
   const orders = Object.values(data || {});
   const pending = orders.filter(o => o && o.status === "pending");
+
   let html = `<h3>📋 Live Table Orders (${pending.length} pending) - Auto Refresh every 5s</h3>`;
   html += `<p class="refresh-note" style="color:green;">✅ Live Sync + 5s Auto Refresh</p>`;
+
   if (pending.length === 0) {
     html += "<p>No pending orders at the moment.</p>";
   } else {
@@ -745,6 +659,52 @@ function showSuccess(msg) {
   toast.style.display = "block";
   setTimeout(() => { toast.style.display = "none"; }, 3000);
 }
+
+function joinTable() {
+  currentTable = document.getElementById("custTable").value.trim();
+  currentName = document.getElementById("custName").value.trim() || "Guest";
+  if (!currentTable) return alert("Please enter Table Number");
+  document.getElementById("signInSection").style.display = "none";
+  document.getElementById("menuSection").style.display = "block";
+  document.getElementById("displayTable").innerText = currentTable;
+  document.getElementById("displayName").innerText = currentName;
+  loadCustomerMenu();
+  renderCustomerOrder();
+  listenForAcceptedOrders();
+}
+
+function loadCustomerMenu() {
+  let html = '';
+  items.forEach((item, idx) => {
+    html += `<div class="menu-item">
+      <span><strong>${item.name}</strong> <small>₹${item.price}</small></span>
+      <button onclick="addCustomerItem(${idx})" style="background:#2e7d32;padding:8px 16px;border-radius:6px;">+ Add</button>
+    </div>`;
+  });
+  document.getElementById("menuItems").innerHTML = html;
+}
+
+function addCustomerItem(idx) {
+  let item = items[idx];
+  let existing = customerOrder.find(o => o.name === item.name);
+  if (existing) existing.qty += 1;
+  else customerOrder.push({...item, qty: 1});
+  renderCustomerOrder();
+}
+
+function renderCustomerOrder() {
+  let html = "", total = 0;
+  customerOrder.forEach((b, i) => {
+    let t = b.qty * b.price;
+    total += t;
+    html += `<tr><td>${b.name}</td><td>${b.qty}</td><td>₹${t}</td><td onclick="delCustomerItem(${i})" style="color:red;cursor:pointer;">❌</td></tr>`;
+  });
+  document.getElementById("customerBill").innerHTML = html;
+  document.getElementById("custTotal").innerText = total.toFixed(2);
+}
+
+function delCustomerItem(i) { customerOrder.splice(i,1); renderCustomerOrder(); }
+function clearCustomerOrder() { if(confirm("Clear cart?")) { customerOrder = []; renderCustomerOrder(); } }
 
 // ====================== INITIALIZE ======================
 function initializeApp() {
